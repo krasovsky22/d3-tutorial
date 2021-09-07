@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+const width = 960;
+const height = 500;
+const strokeWidth = 10;
 
-function App() {
+const eyeOffsetX = 90;
+const eyeOffsetY = 100;
+const eyeRadius = 50;
+
+const centerX = width / 2;
+const centerY = height / 2;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <svg width={width} height={height}>
+        <circle
+          cx={centerX}
+          cy={centerY}
+          r={centerY - strokeWidth / 2}
+          fill="yellow"
+          stroke="black"
+          strokeWidth={strokeWidth}
+        />
+        <circle
+          cx={centerX - eyeOffsetX}
+          cy={centerY - eyeOffsetY}
+          r={eyeRadius}
+        />
+        <circle
+          cx={centerX + eyeOffsetX}
+          cy={centerY - eyeOffsetY}
+          r={eyeRadius}
+        />
+      </svg>
     </div>
   );
-}
+};
 
 export default App;
