@@ -1,4 +1,4 @@
-import { format, extent, scaleBand, scaleLinear } from "d3";
+import { format, extent, scaleLinear } from "d3";
 import { useMemo } from "react";
 import AxisBottom from "./AxisBottom";
 import AxisLeft from "./AxisLeft";
