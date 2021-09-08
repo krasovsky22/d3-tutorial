@@ -15,3 +15,8 @@ body{
 .mark {
     fill: #137b80;
 }
+
+.axis-label {
+    font-size: 2em;
+    fill: #635F5D;
+}

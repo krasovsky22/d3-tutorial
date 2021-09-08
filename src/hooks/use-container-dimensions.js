@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 
 const useContainerDimensions = (myRef) => {
-  const getDimensions = () => ({
-    width: myRef.current.offsetWidth,
-    height: myRef.current.offsetHeight,
-  });
+  const getDimensions = useCallback(
+    () => ({
+      width: myRef?.current?.offsetWidth ?? null,
+      height: myRef?.current?.offsetHeight ?? null,
+    }),
+    [myRef]
+  );
 
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -22,7 +25,7 @@ const useContainerDimensions = (myRef) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [myRef]);
+  }, [getDimensions, myRef]);
 
   return dimensions;
 };
