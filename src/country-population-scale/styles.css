@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.tick line{
+    stroke: #C0C0BB
+}
+
+.tick text {
+    fill: #635F5D;
+}
+
+.mark {
+    fill: #137b80;
+}

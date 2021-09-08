@@ -1,22 +1,18 @@
-import Face from "./Face";
-
-const width = 960;
-const height = 500;
+import { useRef } from "react";
+import CountryPopulateScale from "./country-population-scale";
+import useContainerDimensions from "./hooks/use-container-dimensions";
 
 const App = () => {
+  const containerRef = useRef();
+  const { width, height } = useContainerDimensions(containerRef);
+
+  console.log(containerRef.current);
   return (
-    <Face
-      width={width}
-      height={height}
-      strokeWidth={10}
-      eyeOffsetX={90}
-      eyeOffsetY={100}
-      eyeRadius={50}
-      centerX={width / 2}
-      centerY={height / 2}
-      mouthWidth={20}
-      mouthRadius={140}
-    />
+    <div ref={containerRef} style={{ margin: "50px", height: "500px" }}>
+      {containerRef?.current?.offsetWidth && (
+        <CountryPopulateScale height={height} width={width} />
+      )}
+    </div>
   );
 };
 
