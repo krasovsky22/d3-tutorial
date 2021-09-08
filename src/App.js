@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import CountryPopulateScale from "./country-population-scale";
+import FlowersScale from "./flowers";
 import useContainerDimensions from "./hooks/use-container-dimensions";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div ref={containerRef} style={{ margin: "50px", height: "500px" }}>
       {containerRef?.current?.offsetWidth && (
-        <CountryPopulateScale height={height} width={width} />
+        <FlowersScale height={height} width={width} />
       )}
     </div>
   );
